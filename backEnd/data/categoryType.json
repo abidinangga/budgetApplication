@@ -1,0 +1,38 @@
+[
+  {
+      "categoryType": "Kesehatan"
+      
+  },
+  {
+      "categoryType": "Sedekah"
+      
+  },
+  {
+      "categoryType": "Tabungan"
+      
+  },
+  {
+      "categoryType": "Belanja Bulanan"
+  },
+  {
+      "categoryType": "Liburan"
+  },
+  {
+      "categoryType": "Pakaian"
+  },
+  {
+      "categoryType": "Bahan Bakar"
+  },
+  {
+      "categoryType": "Otomitif"
+  },
+  {
+      "categoryType": "Makanan"
+  },
+  {
+      "categoryType": "Hiburan"
+  },
+  {
+      "categoryType": "Other"
+  }
+]
