@@ -6,6 +6,11 @@ function errorHandler(err, req, res, next) {
         message: err.errors[0].message,
       });
       break;
+      case "SequelizeUniqueConstraintError":
+      res.status(400).json({
+        message: err.errors[0].message,
+      });
+      break;
     case "notFound":
       res.status(404).json({
         message: err.message,

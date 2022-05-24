@@ -1,8 +1,6 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-const {changePassword} = require('../helper/bcrypt');
+"use strict";
+const { Model } = require("sequelize");
+const { changePassword } = require("../helper/bcrypt");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -13,22 +11,72 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Transaction, {
-        foreignKey: 'userId'
-      })
+        foreignKey: "userId",
+      });
     }
   }
-  User.init({
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    username: DataTypes.STRING
-  }, {
-    hooks:{
-      beforeCreate:(User)=>{
-        User.password = changePassword(User.password)
-      }
+  User.init(
+    {
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Please enter an email",
+          },
+          notNull: {
+            args: true,
+            msg: "Please enter an email",
+          },
+          isEmail: {
+            args: true,
+            msg: "Please enter a valid email",
+          },
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Please enter a password",
+          },
+          notNull: {
+            args: true,
+            msg: "Please enter a password",
+          },
+          len: {
+            args: [5],
+            msg: "Please enter a password with at least 5 characters",
+          },
+        },
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Please enter an username",
+          },
+          notNull: {
+            args: true,
+            msg: "Please enter an username",
+          },
+        },
+      },
     },
-    sequelize,
-    modelName: 'User',
-  });
+    {
+      hooks: {
+        beforeCreate: (User) => {
+          User.password = changePassword(User.password);
+        },
+      },
+      sequelize,
+      modelName: "User",
+    }
+  );
   return User;
 };
