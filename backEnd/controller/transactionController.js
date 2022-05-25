@@ -30,24 +30,45 @@ class transactionController {
   static async getAllTransactions(req, res, next) {
     try {
       const transactions = await Transaction.findAll({
-        include :[CategoryTransaction,CategoryType],
-        where : {
-          userId:req.user.id
-        }
-      })
+        include: [CategoryTransaction, CategoryType],
+        where: {
+          userId: req.user.id,
+        },
+      });
       if (!transactions) {
         next({
           name: "notFound",
-          message: "Order not Found",
+          message: "transactions not Found",
         });
-      }else {
+      } else {
         res.status(200).json(transactions);
       }
     } catch (error) {
-      next(error)
+      next(error);
     }
   }
-  static async deleteTransaction(req, res, next) {}
+  static async deleteTransaction(req, res, next) {
+    try {
+      let id = req.params.id;
+      const transaction = await Transaction.destroy({
+        where: {
+          id: id,
+        },
+      });
+      if (!transaction) {
+        next({
+          name: "notFound",
+          message: "transaction not Found",
+        });
+      } else {
+        res.status(200).json({
+          message: "succes delete transaction",
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
   static async totalTransactions(req, res, next) {}
 }
 module.exports = transactionController;
