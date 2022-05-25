@@ -113,12 +113,10 @@ class transactionController {
           message: "income not Found",
         });
       } else {
-        res.status(200).json({
-          message: `total pemasukan ${income}`,
-        });
+        res.status(200).json(income);
       }
     } catch (error) {
-      next(error);
+      next(error); 
     }
   }
   static async expenseTransaction(req, res, next) {
@@ -135,17 +133,39 @@ class transactionController {
           message: "expense not Found",
         });
       } else {
-        res.status(200).json({
-          message: `total pengeluaran ${expense}`,
+        res.status(200).json(expense);
+      }
+    } catch (error) {
+      next(error);
+      
+    }
+  }
+  static async totalTransactions(req, res, next) {
+    try {
+      const income = await Transaction.sum("transactionAmount", {
+        where: {
+          userId: req.user.id,
+          categoryTransactionId: 1,
+        },
+      });
+      const expense = await Transaction.sum("transactionAmount", {
+        where: {
+          userId: req.user.id,
+          categoryTransactionId: 2,
+        },
+      });
+      const total = income - expense;
+      if (!total) {
+        next({
+          name: "notFound",
+          message: "total not Found",
         });
+      } else {
+        res.status(200).json(total);
       }
     } catch (error) {
       next(error);
     }
-  }
-
-  static async totalTransactions(req, res, next) {
-    
   }
 }
 module.exports = transactionController;
