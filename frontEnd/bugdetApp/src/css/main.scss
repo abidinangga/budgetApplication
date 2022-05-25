@@ -1,0 +1,10 @@
+$myColor: aqua;
+$pading-top:3rem;
+
+div{
+  background-color: $myColor;
+  padding-top: 1rem;
+  section{
+    padding-left: 2rem;
+  }
+}
