@@ -69,8 +69,8 @@ class transactionController {
       next(error);
     }
   }
-  static async editTransaction(req,res,next){
-    try{
+  static async editTransaction(req, res, next) {
+    try {
       let id = req.params.id;
       let newData = {
         transactionAmount: req.body.transactionAmount,
@@ -80,27 +80,72 @@ class transactionController {
         categoryTypeId: req.body.categoryTypeId,
         date: req.body.date,
       };
-      const transaction = await Transaction.update(newData,{
-        where:{
+      const transaction = await Transaction.update(newData, {
+        where: {
           id: id,
-        }
+        },
       });
-      if(!transaction){
+      if (!transaction) {
         next({
           name: "notFound",
           message: "transaction not Found",
         });
-      }else{
+      } else {
         res.status(200).json({
           message: "succes edit transaction",
         });
       }
-    }catch(error){
+    } catch (error) {
       next(error);
     }
   }
-  static async totalTransactions(req, res, next) {
+  static async incomeTransaction(req, res, next) {
+    try {
+      const income = await Transaction.sum("transactionAmount", {
+        where: {
+          userId: req.user.id,
+          categoryTransactionId: 1,
+        },
+      });
+      if (!income) {
+        next({
+          name: "notFound",
+          message: "income not Found",
+        });
+      } else {
+        res.status(200).json({
+          message: `total pemasukan ${income}`,
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+  static async expenseTransaction(req, res, next) {
+    try {
+      const expense = await Transaction.sum("transactionAmount", {
+        where: {
+          userId: req.user.id,
+          categoryTransactionId: 2,
+        },
+      });
+      if (!expense) {
+        next({
+          name: "notFound",
+          message: "expense not Found",
+        });
+      } else {
+        res.status(200).json({
+          message: `total pengeluaran ${expense}`,
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
 
+  static async totalTransactions(req, res, next) {
+    
   }
 }
 module.exports = transactionController;

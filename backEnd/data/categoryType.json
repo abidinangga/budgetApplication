@@ -1,38 +1,44 @@
 [
   {
-      "categoryType": "Kesehatan"
-      
+    "categoryType": "Gaji"
   },
   {
-      "categoryType": "Sedekah"
-      
+    "categoryType": "Investasi"
   },
   {
-      "categoryType": "Tabungan"
-      
+    "categoryType": "Bisnis"
   },
   {
-      "categoryType": "Belanja Bulanan"
+    "categoryType": "Kesehatan"
   },
   {
-      "categoryType": "Liburan"
+    "categoryType": "Sedekah"
   },
   {
-      "categoryType": "Pakaian"
+    "categoryType": "Tabungan"
   },
   {
-      "categoryType": "Bahan Bakar"
+    "categoryType": "Belanja Bulanan"
   },
   {
-      "categoryType": "Otomitif"
+    "categoryType": "Liburan"
   },
   {
-      "categoryType": "Makanan"
+    "categoryType": "Pakaian"
   },
   {
-      "categoryType": "Hiburan"
+    "categoryType": "Bahan Bakar"
   },
   {
-      "categoryType": "Other"
+    "categoryType": "Otomitif"
+  },
+  {
+    "categoryType": "Makanan"
+  },
+  {
+    "categoryType": "Hiburan"
+  },
+  {
+    "categoryType": "Other"
   }
 ]

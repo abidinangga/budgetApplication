@@ -4,8 +4,10 @@ const router = express.Router();
 
 router.post("/", Controller.addTransaction);
 router.get("/", Controller.getAllTransactions);
-router.delete('/:id', Controller.deleteTransaction);
-router.get('/:id', Controller.totalTransactions);
+router.get("/income", Controller.incomeTransaction);
+router.get("/expense", Controller.expenseTransaction);
+router.get('/total', Controller.totalTransactions);
 router.put('/:id', Controller.editTransaction);
+router.delete('/:id', Controller.deleteTransaction);
 
 module.exports = router;
