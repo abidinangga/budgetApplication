@@ -14,10 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       CategoryType.hasMany(models.Transaction, {
         foreignKey: 'categoryTypeId'
       })
+      CategoryType.belongsTo(models.CategoryTransaction, {
+        foreignKey: 'categoryTransactionId'
+      })
     }
   }
   CategoryType.init({
-    categoryType: DataTypes.STRING
+    categoryType: DataTypes.STRING,
+    categoryTransactionId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'CategoryType',

@@ -1,44 +1,54 @@
 [
   {
-    "categoryType": "Gaji"
+    "categoryType": "Gaji",
+    "categoryTransactionId": 1
   },
   {
-    "categoryType": "Investasi"
+    "categoryType": "Investasi",
+    "categoryTransactionId": 1
   },
   {
-    "categoryType": "Bisnis"
+    "categoryType": "Bisnis",
+    "categoryTransactionId": 1
   },
   {
-    "categoryType": "Kesehatan"
+    "categoryType": "Kesehatan",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Sedekah"
+    "categoryType": "Sedekah",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Tabungan"
+    "categoryType": "Tabungan",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Belanja Bulanan"
+    "categoryType": "Belanja Bulanan",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Liburan"
+    "categoryType": "Liburan",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Pakaian"
+    "categoryType": "Pakaian",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Bahan Bakar"
+    "categoryType": "Bahan Bakar",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Otomitif"
+    "categoryType": "Otomitif",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Makanan"
+    "categoryType": "Makanan",
+    "categoryTransactionId": 2
   },
   {
-    "categoryType": "Hiburan"
-  },
-  {
-    "categoryType": "Other"
+    "categoryType": "Hiburan",
+    "categoryTransactionId": 2
   }
 ]

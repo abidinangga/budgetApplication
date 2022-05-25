@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       CategoryTransaction.hasMany(models.Transaction, {
         foreignKey: 'categoryTransactionId'
       })
+      CategoryTransaction.hasMany(models.CategoryType, {
+        foreignKey: 'categoryTransactionId'
+      })
     }
   }
   CategoryTransaction.init({
