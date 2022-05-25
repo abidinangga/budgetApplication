@@ -15,5 +15,11 @@ export const useCounterStore = defineStore({
         password: payload.password,
       });
     },
+    loginAction(payload) {
+      return axios.post("/login", {
+        email: payload.email,
+        password: payload.password,
+      });
+    }
   }
 })

@@ -10,13 +10,7 @@
         </div>
         <form @submit.prevent="submitLogin" id="login_form" action="" method="POST">
           <label>Email</label>
-          <input
-            v-model="email"
-            type="text"
-            name="username"
-            placeholder="roby@gmail.com"
-            required
-          />
+          <input v-model="email" type="text" placeholder="roby@gmail.com" required />
           <label>Password</label>
           <input
             v-model="password"
@@ -41,7 +35,32 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "pinia";
+import { useCounterStore } from "@/stores/counter.js";
+export default {
+  name: "login",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    ...mapActions(useCounterStore, ["loginAction"]),
+    async submitLogin() {
+      try {
+        const data = await this.loginAction({
+          email: this.email,
+          password: this.password,
+        });
+        localStorage.setItem("access_token", data.data.access_token);
+        this.$router.push("/home");
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+};
 </script>
 
 <style></style>
