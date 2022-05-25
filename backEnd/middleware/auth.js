@@ -10,8 +10,6 @@ function authentication(req, res, next) {
         if (data) {
           req.user = {
             id: data.id,
-            username: data.username,
-            email:data.email
           };
           next();
         } else {

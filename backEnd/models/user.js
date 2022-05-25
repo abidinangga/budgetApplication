@@ -23,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notEmpty: {
             args: true,
-            msg: "Please enter an email",
+            msg: "Please input an email",
           },
           notNull: {
             args: true,
-            msg: "Please enter an email",
+            msg: "Please input an email",
           },
           isEmail: {
             args: true,
-            msg: "Please enter a valid email",
+            msg: "Please input a valid email",
           },
         },
       },
@@ -41,15 +41,15 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notEmpty: {
             args: true,
-            msg: "Please enter a password",
+            msg: "Please input a password",
           },
           notNull: {
             args: true,
-            msg: "Please enter a password",
+            msg: "Please input a password",
           },
           len: {
             args: [5],
-            msg: "Please enter a password with at least 5 characters",
+            msg: "Please input a password with at least 5 characters",
           },
         },
       },
@@ -59,11 +59,11 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           notEmpty: {
             args: true,
-            msg: "Please enter an username",
+            msg: "Please input an username",
           },
           notNull: {
             args: true,
-            msg: "Please enter an username",
+            msg: "Please input an username",
           },
         },
       },

@@ -23,8 +23,35 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Transaction.init({
-    transactionAmount: DataTypes.INTEGER,
-    description: DataTypes.TEXT,
+    transactionAmount:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Please input an transaction amount ",
+          },
+          notNull: {
+            args: true,
+            msg: "Please input an transaction amount",
+          },
+        },
+    },
+
+    description: {
+     type: DataTypes.TEXT,
+     allowNull: false,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: "Please input an description",
+          },
+          notNull: {
+            args: true,
+            msg: "Please input an description",
+          },
+        },
+    },
     userId: DataTypes.INTEGER,
     categoryTransactionId: DataTypes.INTEGER,
     categoryTypeId: DataTypes.INTEGER,
