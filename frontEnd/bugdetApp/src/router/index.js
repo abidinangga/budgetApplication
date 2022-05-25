@@ -26,12 +26,26 @@ const router = createRouter({
     {
       path: '/add',
       name: 'add',
-      component: add
+      component: add,
+      beforeEnter:(to,from,next)=>{
+        if(localStorage.access_token){
+          next()
+        } else{
+          next('/')
+        }
+      }
     },
     {
       path: '/edit',
       name: 'edit',
-      component: edit
+      component: edit,
+      beforeEnter:(to,from,next)=>{
+        if(localStorage.access_token){
+          next()
+        } else{
+          next('/')
+        }
+      }
     },
   ]
 })

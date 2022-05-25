@@ -45,7 +45,37 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "pinia";
+import { useCounterStore } from "@/stores/counter.js";
+export default {
+  name: "addTransaction",
+  data() {
+    return {
+      categoryTransactionId: "",
+      transactionAmount: "",
+      date: "",
+      categoryTypeId: "",
+      description: "",
+    };
+  },
+  methods: {
+    ...mapActions(useCounterStore, ["addTransactionAction"]),
+    async submitAdd() {
+      try {
+        const transaction = await this.addTransactionAction({
+          categoryTransactionId: this.categoryTransactionId,
+          transactionAmount: this.transactionAmount,
+          date: this.date,
+          categoryTypeId: this.categoryTypeId,
+          description: this.description,
+        });
+        this.$router.push("/home");
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+};
 </script>
 
 <style></style>
