@@ -23,7 +23,33 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "pinia";
+import { useCounterStore } from "@/stores/counter.js";
+export default {
+  name:"register",
+data() {
+    return {
+        username: "",
+        email: "",
+        password: "",
+    };
+},
+methods: {
+    ...mapActions(useCounterStore, ["registAction"]),
+    async submitRegist() {
+    try {
+        await this.registAction({
+        username: this.username,
+        email: this.email,
+        password: this.password,
+        });
+        this.$router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+    },
+},
+};
 </script>
 
 <style></style>
