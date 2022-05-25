@@ -2,16 +2,15 @@ const { User, CategoryTransaction, CategoryType, Transaction } = require("../mod
 
 class transactionController {
   static async addTransaction(req, res, next) {
-    let newData = {
-      transactionAmount: req.body.transactionAmount,
-      description: req.body.description,
-      userId: req.user.id,
-      categoryTransactionId: req.body.categoryTransactionId,
-      categoryTypeId: req.body.categoryTypeId,
-      date: req.body.date,
-    };
-    console.log(newData);
     try {
+      let newData = {
+        transactionAmount: req.body.transactionAmount,
+        description: req.body.description,
+        userId: req.user.id,
+        categoryTransactionId: req.body.categoryTransactionId,
+        categoryTypeId: req.body.categoryTypeId,
+        date: req.body.date,
+      };
       const transaction = await Transaction.create(newData);
       res.status(201).json({
         statusCode: 201,
@@ -25,11 +24,29 @@ class transactionController {
         },
       });
     } catch (error) {
-      console.log("error: ", error);
       next(error);
     }
   }
-  static async getAllTransactions(req, res, next) {}
+  static async getAllTransactions(req, res, next) {
+    try {
+      const transactions = await Transaction.findAll({
+        include :[CategoryTransaction,CategoryType],
+        where : {
+          userId:req.user.id
+        }
+      })
+      if (!transactions) {
+        next({
+          name: "notFound",
+          message: "Order not Found",
+        });
+      }else {
+        res.status(200).json(transactions);
+      }
+    } catch (error) {
+      next(error)
+    }
+  }
   static async deleteTransaction(req, res, next) {}
   static async totalTransactions(req, res, next) {}
 }
