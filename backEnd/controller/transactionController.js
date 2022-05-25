@@ -69,6 +69,38 @@ class transactionController {
       next(error);
     }
   }
-  static async totalTransactions(req, res, next) {}
+  static async editTransaction(req,res,next){
+    try{
+      let id = req.params.id;
+      let newData = {
+        transactionAmount: req.body.transactionAmount,
+        description: req.body.description,
+        userId: req.user.id,
+        categoryTransactionId: req.body.categoryTransactionId,
+        categoryTypeId: req.body.categoryTypeId,
+        date: req.body.date,
+      };
+      const transaction = await Transaction.update(newData,{
+        where:{
+          id: id,
+        }
+      });
+      if(!transaction){
+        next({
+          name: "notFound",
+          message: "transaction not Found",
+        });
+      }else{
+        res.status(200).json({
+          message: "succes edit transaction",
+        });
+      }
+    }catch(error){
+      next(error);
+    }
+  }
+  static async totalTransactions(req, res, next) {
+
+  }
 }
 module.exports = transactionController;

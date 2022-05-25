@@ -6,5 +6,6 @@ router.post("/", Controller.addTransaction);
 router.get("/", Controller.getAllTransactions);
 router.delete('/:id', Controller.deleteTransaction);
 router.get('/:id', Controller.totalTransactions);
+router.put('/:id', Controller.editTransaction);
 
 module.exports = router;
