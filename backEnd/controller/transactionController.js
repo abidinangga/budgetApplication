@@ -47,6 +47,27 @@ class transactionController {
       next(error);
     }
   }
+  static async getById(req, res, next) {
+    try {
+      let id = req.params.id
+      const transaction = await Transaction.findOne({
+        include: [CategoryTransaction, CategoryType],
+        where: {
+          id: id,
+        },
+      });
+      if (!transaction) {
+        next({
+          name: "notFound",
+          message: "transaction not Found",
+        });
+      } else {
+        res.status(200).json(transaction);
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
   static async deleteTransaction(req, res, next) {
     try {
       let id = req.params.id;
@@ -116,7 +137,7 @@ class transactionController {
         res.status(200).json(income);
       }
     } catch (error) {
-      next(error); 
+      next(error);
     }
   }
   static async expenseTransaction(req, res, next) {
