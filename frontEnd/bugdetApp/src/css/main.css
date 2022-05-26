@@ -1,9 +1,40 @@
-div {
-  background-color: aqua;
-  padding-top: 1rem;
+.main {
+  background-color: bisque;
 }
 
-div section {
-  padding-left: 2rem;
+.main .main-header {
+  font-family: monospace;
+}
+
+.main .main-header .main-h {
+  font-size: 30px;
+}
+
+.main .main-header .main-box {
+  width: 320px;
+  height: 300px;
+  top: 20%;
+  left: 40%;
+  position: absolute;
+  border-style: groove;
+}
+
+.main .main-header .main-label {
+  font-size: large;
+}
+
+.main .main-header .main-input {
+  border-style: double;
+  width: 300px;
+}
+
+.main .main-header .main-footer {
+  font-size: large;
+  padding-left: 25%;
+}
+
+.main .main-header .main-button {
+  color: burlywood;
+  left: 40%;
 }
 /*# sourceMappingURL=main.css.map */

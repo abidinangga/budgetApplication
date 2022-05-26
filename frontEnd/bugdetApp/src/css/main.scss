@@ -1,10 +1,32 @@
-$myColor: aqua;
-$pading-top:3rem;
-
-div{
-  background-color: $myColor;
-  padding-top: 1rem;
-  section{
-    padding-left: 2rem;
+.main {
+  background-color: bisque;
+  .main-header {
+    font-family: monospace;
+    .main-h {
+      font-size: 30px;
+    }
+    .main-box {
+      width: 320px;
+      height: 300px;
+      top: 20%;
+      left: 40%;
+      position: absolute;
+      border-style: groove;
+    }
+    .main-label{
+      font-size: large;
+    }
+    .main-input{
+      border-style:double;
+      width: 300px;
+    }
+    .main-footer{
+      font-size: large;
+      padding-left: 25%;
+    }
+    .main-button{
+      color:burlywood;
+      left: 40%;
+    }
   }
 }

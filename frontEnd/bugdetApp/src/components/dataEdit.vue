@@ -1,28 +1,27 @@
 <template>
   <div>
     <div>
+      <label>Date</label>
+      <input type="date" v-model="dataById.date" />
+    </div>
+    <div>
       <label>Category Transaction</label>
-      <select v-model="dataById.categoryTransactionId">
+      <select v-model="dataById.categoryTransactionId" @change="category()">
         <option value="1">Pemasukan</option>
         <option value="2">Pengeluaran</option>
       </select>
     </div>
     <div>
-      <label>Transaction Amount</label>
-      <input placeholder="100000" type="text" v-model="dataById.transactionAmount" />
-    </div>
-    <div>
-      <label>Date</label>
-      <input type="date" v-model="dataById.date" />
-    </div>
-    <div>
       <label>Category Type</label>
       <select v-model="dataById.categoryTypeId">
-        <option value="1">Gaji</option>
-        <option value="2">Bonus</option>
-        <option value="4">Kesehatan</option>
-        <option value="12">Makanan</option>
+        <option v-for="data in listCategory" :key="data.id" :value="data.id">
+          {{ data.categoryType }}
+        </option>
       </select>
+    </div>
+    <div>
+      <label>Transaction Amount</label>
+      <input placeholder="100000" type="text" v-model="dataById.transactionAmount" />
     </div>
     <div>
       <label>Description</label>
@@ -40,13 +39,19 @@
 </template>
 
 <script>
-import { mapActions } from "pinia";
+import { mapActions, mapState } from "pinia";
 import { useCounterStore } from "@/stores/counter.js";
 export default {
   name: "dataEdit",
+  data() {
+    return {
+      listCategory: [],
+      categoryType: "",
+    };
+  },
   props: ["dataById"],
   methods: {
-    ...mapActions(useCounterStore, ["editDataTransaction"]),
+    ...mapActions(useCounterStore, ["editDataTransaction", "getCategory"]),
     async submitEdit() {
       try {
         const data = await this.editDataTransaction(this.dataById);
@@ -55,6 +60,25 @@ export default {
         console.log("error: ", error);
       }
     },
+    category() {
+      this.listCategory = [];
+      let data = this.dataCategory;
+      data.filter((el) => {
+        if (el.categoryTransactionId == this.categoryType) {
+          this.listCategory.push(el);
+        }
+      });
+    },
+  },
+  computed: {
+    ...mapState(useCounterStore, ["dataCategory"]),
+  },
+  created() {
+    this.getCategory();
+    this.categoryType = this.dataById.categoryTransactionId;
+    if (this.categoryType) {
+      this.category();
+    }
   },
 };
 </script>

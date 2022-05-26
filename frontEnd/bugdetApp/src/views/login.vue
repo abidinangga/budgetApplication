@@ -1,34 +1,30 @@
 <template>
-  <div>
-    <section>
-      <div>
-        <button>
-          <router-link to="/home">Home</router-link>
-        </button>
-        <div>
-          <h1>Budget Application<span></span></h1>
-        </div>
-        <form @submit.prevent="submitLogin" id="login_form" action="" method="POST">
-          <label>Email</label>
-          <input v-model="email" type="text" placeholder="roby@gmail.com" required />
-          <label>Password</label>
+  <div class="container">
+    <section class="main">
+      <div class="main-header">
+          <h1 class="main-h">Budget Application</h1>
+        <form @submit.prevent="submitLogin"  method="POST" class="main-box">
+          <label class="main-label">Email</label>
+          <input class="main-input" v-model="email" type="text" placeholder="roby@gmail.com" required />
+          <label class="main-label">Password</label>
           <input
             v-model="password"
             type="password"
             name="password"
+            class="main-input"
             placeholder="********"
             required
           />
-          <button>
+          <button class="main-button">
             <span>Login</span>
           </button>
-        </form>
-        <div>
+        <div class="main-footer">
           <p>belum punya akun?</p>
-          <button>
+          <button class="main-button">
             <router-link to="/register">Register</router-link>
           </button>
         </div>
+        </form>
       </div>
     </section>
   </div>

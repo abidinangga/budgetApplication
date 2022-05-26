@@ -129,7 +129,7 @@ export const useCounterStore = defineStore({
     },
     async getCategory() {
       try {
-        const data = await axios.get("/category", {});
+        const data = await axios.get("/category");
         this.dataCategory = data.data;
       } catch (error) {
         console.log("error: ", error);

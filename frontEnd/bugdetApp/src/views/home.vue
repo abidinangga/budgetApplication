@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button>
+  <div class="divHome">
+    <button class="buttonAdd">
       <router-link to="/add">Add</router-link>
     </button>
     <button @click.prevent="logout">Logout</button>

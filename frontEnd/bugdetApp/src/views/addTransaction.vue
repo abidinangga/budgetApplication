@@ -4,28 +4,27 @@
       <div>
         <h1>Add Transaction</h1>
         <div>
+          <label>Date</label>
+          <input type="date" v-model="date" />
+        </div>
+        <div>
           <label>Category Transaction</label>
-          <select v-model="categoryTransactionId">
+          <select v-model="categoryTransactionId" @change="category()">
             <option value="1">Pemasukan</option>
             <option value="2">Pengeluaran</option>
           </select>
         </div>
         <div>
+          <label>Category Type</label>
+          <select v-model="categoryTypeId" :disabled="!categoryTransactionId">
+            <option v-for="data in listCategory" :key="data.id" :value="data.id">
+              {{ data.categoryType }}
+            </option>
+          </select>
+        </div>
+        <div>
           <label>Transaction Amount</label>
           <input placeholder="100000" type="text" v-model="transactionAmount" />
-        </div>
-        <div>
-          <label>Date</label>
-          <input type="date" v-model="date" />
-        </div>
-        <div>
-          <label>Category Type</label>
-          <select v-model="categoryTypeId">
-            <option value="1">Gaji</option>
-            <option value="2">Bonus</option>
-            <option value="4">Kesehatan</option>
-            <option value="12">Makanan</option>
-          </select>
         </div>
         <div>
           <label>Description</label>
@@ -45,7 +44,7 @@
 </template>
 
 <script>
-import { mapActions } from "pinia";
+import { mapActions, mapState } from "pinia";
 import { useCounterStore } from "@/stores/counter.js";
 export default {
   name: "addTransaction",
@@ -56,10 +55,11 @@ export default {
       date: "",
       categoryTypeId: "",
       description: "",
+      listCategory: [],
     };
   },
   methods: {
-    ...mapActions(useCounterStore, ["addTransactionAction"]),
+    ...mapActions(useCounterStore, ["addTransactionAction", "getCategory"]),
     async submitAdd() {
       try {
         const transaction = await this.addTransactionAction({
@@ -74,6 +74,21 @@ export default {
         console.log(error);
       }
     },
+    category() {
+      this.listCategory = [];
+      let data = this.dataCategory;
+      data.filter((el) => {
+        if (el.categoryTransactionId == this.categoryTransactionId) {
+          this.listCategory.push(el);
+        }
+      });
+    },
+  },
+  computed: {
+    ...mapState(useCounterStore, ["dataCategory"]),
+  },
+  created() {
+    this.getCategory();
   },
 };
 </script>
