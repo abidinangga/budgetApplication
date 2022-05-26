@@ -32,11 +32,11 @@
           <textarea v-model="description"></textarea>
         </div>
         <div>
-          <div>
-            <router-link to="/">Back</router-link>
-          </div>
           <div class="inline-flex items-end">
             <button @click.prevent="submitAdd">Submit</button>
+          </div>
+          <div>
+            <router-link to="/home">Back</router-link>
           </div>
         </div>
       </div>

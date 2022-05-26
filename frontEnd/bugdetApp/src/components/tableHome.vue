@@ -4,7 +4,7 @@
     <td>{{ data.CategoryTransaction.categoryTransaction }}</td>
     <td>{{ data.description }}</td>
     <td>{{ data.CategoryType.categoryType }}</td>
-    <td>Rp.{{ data.transactionAmount }}</td>
+    <td>Rp.{{rupiah(data.transactionAmount)}}</td>
     <td>{{ data.date }}</td>
     <td>
       <button @click.prevent="editData(data.id)">Edit</button>
@@ -21,11 +21,15 @@ export default {
   props: ["data", "index"],
   methods: {
     ...mapActions(useCounterStore, ["deleteTransaction", "getTransactionById"]),
+    rupiah(value){
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
     deleteData(id) {
       this.deleteTransaction(id);
     },
     editData(id) {
       this.getTransactionById(id);
+      this.$router.push("/edit");
     },
   },
 };

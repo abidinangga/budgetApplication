@@ -6,8 +6,16 @@ export const useCounterStore = defineStore({
     dataAll: [],
     dataIncome: [],
     dataExpense: [],
+    dataTotal: [],
     dataCategory: [],
-    dataById: [],
+    dataById: {
+      id: "",
+      transactionAmount: "",
+      description: "",
+      categoryTransactionId: "",
+      categoryTypeId: "",
+      date: "",
+    },
   }),
   getters: {},
   actions: {
@@ -42,6 +50,23 @@ export const useCounterStore = defineStore({
         }
       );
     },
+    editDataTransaction(payload) {
+      return axios.put(
+        `/transaction/${payload.id}`,
+        {
+          categoryTransactionId: payload.categoryTransactionId,
+          transactionAmount: payload.transactionAmount,
+          date: payload.date,
+          categoryTypeId: payload.categoryTypeId,
+          description: payload.description,
+        },
+        {
+          headers: {
+            access_token: localStorage.getItem("access_token"),
+          },
+        }
+      );
+    },
     async getAllTransactionAction() {
       try {
         const data = await axios.get("/transaction", {
@@ -54,31 +79,55 @@ export const useCounterStore = defineStore({
         console.log("error: ", error);
       }
     },
-    async incomeTransaction(){
+    async incomeTransaction() {
       try {
         const data = await axios.get("/transaction/income", {
           headers: {
             access_token: localStorage.getItem("access_token"),
           },
         });
-        this.dataIncome = data.data;
+        const numb = data.data;
+        const format = numb.toString().split("").reverse().join("");
+        const convert = format.match(/\d{1,3}/g);
+        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
+        this.dataIncome = rupiah;
       } catch (error) {
         console.log("error: ", error);
       }
     },
-    async expenseTransaction(){
+    async expenseTransaction() {
       try {
         const data = await axios.get("/transaction/expense", {
           headers: {
             access_token: localStorage.getItem("access_token"),
           },
         });
-        this.dataExpense = data.data;
+        const numb = data.data;
+        const format = numb.toString().split("").reverse().join("");
+        const convert = format.match(/\d{1,3}/g);
+        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
+        this.dataExpense = rupiah;
       } catch (error) {
         console.log("error: ", error);
       }
     },
-    async getCategory(){
+    async totalTransaction() {
+      try {
+        const data = await axios.get("/transaction/total", {
+          headers: {
+            access_token: localStorage.getItem("access_token"),
+          },
+        });
+        const numb = data.data;
+        const format = numb.toString().split("").reverse().join("");
+        const convert = format.match(/\d{1,3}/g);
+        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
+        this.dataTotal = rupiah;
+      } catch (error) {
+        console.log("error: ", error);
+      }
+    },
+    async getCategory() {
       try {
         const data = await axios.get("/category", {});
         this.dataCategory = data.data;
@@ -86,7 +135,7 @@ export const useCounterStore = defineStore({
         console.log("error: ", error);
       }
     },
-    async deleteTransaction(id){
+    async deleteTransaction(id) {
       try {
         const data = await axios.delete(`/transaction/${id}`, {
           headers: {
@@ -97,19 +146,24 @@ export const useCounterStore = defineStore({
         console.log("error: ", error);
       }
     },
-    async getTransactionById(id){
+    async getTransactionById(id) {
       try {
         const data = await axios.get(`/transaction/${id}`, {
           headers: {
             access_token: localStorage.getItem("access_token"),
           },
         });
-        this.dataById = data.data;
+        this.dataById = {
+          id: data.data.id,
+          transactionAmount: data.data.transactionAmount,
+          description: data.data.description,
+          categoryTransactionId: data.data.categoryTransactionId,
+          categoryTypeId: data.data.categoryTypeId,
+          date: data.data.date,
+        };
       } catch (error) {
         console.log("error: ", error);
       }
-    },
-    async editTransaction(payload){
     },
   },
 });

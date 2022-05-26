@@ -21,7 +21,14 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      beforeEnter:(to,from,next)=>{
+        if(localStorage.access_token){
+          next()
+        } else{
+          next('/')
+        }
+      }
     },
     {
       path: '/add',

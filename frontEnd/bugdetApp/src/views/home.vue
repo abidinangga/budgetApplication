@@ -5,6 +5,12 @@
     </button>
     <button @click.prevent="logout">Logout</button>
     <div>
+      <div>
+        Pemasukan: {{dataIncome}}
+      </div>
+      <div>
+        Pengeluaran: {{dataExpense}}
+      </div>
       <table>
         <thead>
           <tr>
@@ -39,17 +45,19 @@ export default {
     tableHome,
   },
   methods: {
-    ...mapActions(useCounterStore, ["getAllTransactionAction"]),
+    ...mapActions(useCounterStore, ["getAllTransactionAction","incomeTransaction","expenseTransaction","totalTransaction"]),
     logout() {
       localStorage.removeItem("access_token");
       this.$router.push("/");
     },
   },
   computed: {
-    ...mapState(useCounterStore, ["dataAll"]),
+    ...mapState(useCounterStore, ["dataAll", "dataIncome", "dataExpense","dataTotal"]),
   },
   created() {
     this.getAllTransactionAction();
+    this.incomeTransaction();
+    this.expenseTransaction();
   },
 };
 </script>
