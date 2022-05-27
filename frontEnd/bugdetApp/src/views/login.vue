@@ -4,9 +4,9 @@
     <section class="main">
         <form @submit.prevent="submitLogin"  method="POST" class="main-box">
            <p class="main-p">Login</p>
-          <label class="main-label">Email</label>
+          <label class="main-label">Email:</label>
           <input class="main-input" v-model="email" type="text" placeholder="roby@gmail.com" required />
-          <label class="main-label">Password</label>
+          <label class="main-label">Password:</label>
           <input
             v-model="password"
             type="password"
@@ -19,7 +19,7 @@
             <span>Login</span>
           </button>
         <div class="main-footer">
-          <p class="footer-p">belum punya akun?</p>
+          <p class="footer-p">don't have an account?</p>
           <button class="main-button">
             <router-link to="/register">Register</router-link>
           </button>
@@ -67,12 +67,14 @@ export default {
   justify-content: center;
   align-items: center;
   background: url(../assets/pict2.jpg);
+  background-size: cover;
 }
 .main-h {
   font-size: 2rem;
   font-weight: bold;
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
+  font-family:'Lobster', cursive;
 }
 .main{
   width: 100%;
@@ -81,41 +83,45 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Courgette', cursive;
 }
 .main-box{
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 60%;
   display: flex;
-  padding: 15px 20px;
+  padding: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 246, 246);
+  background-color: rgb(233, 228, 224);
   border-radius: 10px;
-
+  opacity: 0.8;
 }
 .main-p{
   font-size: 1.5rem;
   font-weight: bold;
-  color: black;
+  color: rgb(2, 2, 2);
   text-align: center;
 }
 .main-label{
   font-size: 1rem;
   font-weight: bold;
-  color: black;
+  color: rgb(0, 0, 0);
+
 }
 .main-input{
   width:70%;
   height: 5%;
-  border: 1px solid #999;
+  border: 1px solid rgb(255, 255, 255);
   padding: 1%;
   margin: 1%;
   border-radius: 10px;
+
 }
 .main-button{
-  margin-top: 8px;
+  margin-top: 1px;
   padding: 5px 10px;
+  font-family: 'Courgette', cursive;
 }
 .main-footer{
   width: 100%;
@@ -124,10 +130,11 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Courgette', cursive;
 }
 .footer-p{
   font-size: 1rem;
   font-weight: bold;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 </style>

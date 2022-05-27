@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <div>
-      <div>
-        <h1>Edit Transaction</h1>
+    <div class="divForm">
+      <h1 class="main-h">Edit Transaction</h1>
+      <div class="divForm-main">
       <editPage
       :dataById="dataById"
       >
       </editPage>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

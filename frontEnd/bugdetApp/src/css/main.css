@@ -1,10 +1,33 @@
+@media only screen and (max-width: 760px) {
+  td,
+  tr {
+    display: block;
+    padding: 1rem;
+    font-size: 10px;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    font-size: 2px;
+  }
+  .header-home {
+    display: table-column;
+    padding: 1rem;
+    top: -9999px;
+    left: -9999px;
+  }
+}
+
 .table1 {
   background: antiquewhite;
-  font-family: sans-serif;
+  font-family: "Courgette", cursive;
   color: #444;
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #f2f5f7;
+  height: 100vh;
 }
 
 .table1 .table1-tr .table1-th {
@@ -12,6 +35,7 @@
   color: #fff;
   font-weight: normal;
   border: 1px solid #999;
+  padding: 8px;
 }
 
 .table1 .table1-td {
