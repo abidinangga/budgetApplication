@@ -10,13 +10,13 @@ npm install
 
 ```js
 #create database
-sequelize db:create
+npx sequelize-cli db:create
 
 #migration
-sequelize db:migrate
+npx sequelize-cli db:migrate
 
 #seed
-sequelize db:seed:all
+npx sequelize-cli db:seed:all
 
 #runing
 npm run dev
