@@ -1,0 +1,54 @@
+[
+  {
+    "categoryType": "Gaji",
+    "categoryTransactionId": 1
+  },
+  {
+    "categoryType": "Investasi",
+    "categoryTransactionId": 1
+  },
+  {
+    "categoryType": "Bisnis",
+    "categoryTransactionId": 1
+  },
+  {
+    "categoryType": "Kesehatan",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Sedekah",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Tabungan",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Belanja Bulanan",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Liburan",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Pakaian",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Bahan Bakar",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Otomitif",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Makanan",
+    "categoryTransactionId": 2
+  },
+  {
+    "categoryType": "Hiburan",
+    "categoryTransactionId": 2
+  }
+]
