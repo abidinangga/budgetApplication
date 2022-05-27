@@ -1,9 +1,10 @@
 <template>
   <div class="container">
+    <h1 class="main-h">Budget Application</h1>
     <section class="main">
       <div class="main-header">
-          <h1 class="main-h">Budget Application</h1>
         <form @submit.prevent="submitLogin"  method="POST" class="main-box">
+           <p class="main-p">Login</p>
           <label class="main-label">Email</label>
           <input class="main-input" v-model="email" type="text" placeholder="roby@gmail.com" required />
           <label class="main-label">Password</label>

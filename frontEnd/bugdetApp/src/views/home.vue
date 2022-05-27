@@ -5,22 +5,19 @@
     </button>
     <button @click.prevent="logout">Logout</button>
     <div>
-      <div>
-        Pemasukan: {{dataIncome}}
-      </div>
-      <div>
-        Pengeluaran: {{dataExpense}}
-      </div>
-      <table>
+      <div class="income">Income: Rp. {{ rupiah(dataIncome) }}</div>
+      <div class="expense">Expense: Rp. {{ rupiah(dataExpense) }}</div>
+      <div class="balence">Balence: Rp. {{ rupiah(dataTotal) }}</div>
+      <table class="table1">
         <thead>
-          <tr>
-            <th>No</th>
-            <th>Category Transaction</th>
-            <th>Description</th>
-            <th>Type Transaction</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Action</th>
+          <tr class="table1-tr">
+            <th class="table1-th">No</th>
+            <th class="table1-th">Category Transaction</th>
+            <th class="table1-th">Description</th>
+            <th class="table1-th">Type Transaction</th>
+            <th class="table1-th">Amount</th>
+            <th class="table1-th">Date</th>
+            <th class="table1-th">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -45,19 +42,28 @@ export default {
     tableHome,
   },
   methods: {
-    ...mapActions(useCounterStore, ["getAllTransactionAction","incomeTransaction","expenseTransaction","totalTransaction"]),
+    ...mapActions(useCounterStore, [
+      "getAllTransactionAction",
+      "incomeTransaction",
+      "expenseTransaction",
+      "totalTransaction",
+    ]),
     logout() {
       localStorage.removeItem("access_token");
       this.$router.push("/");
     },
+    rupiah(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
   },
   computed: {
-    ...mapState(useCounterStore, ["dataAll", "dataIncome", "dataExpense","dataTotal"]),
+    ...mapState(useCounterStore, ["dataAll", "dataIncome", "dataExpense", "dataTotal"]),
   },
   created() {
     this.getAllTransactionAction();
     this.incomeTransaction();
     this.expenseTransaction();
+    this.totalTransaction();
   },
 };
 </script>

@@ -15,6 +15,9 @@
           <button type="submit">
             <span>Create Account</span>
           </button>
+          <button class="buttonBack">
+            <router-link to="/">Back</router-link>
+          </button>
         </form>
         <div></div>
       </div>
@@ -26,29 +29,29 @@
 import { mapActions } from "pinia";
 import { useCounterStore } from "@/stores/counter.js";
 export default {
-  name:"register",
-data() {
+  name: "register",
+  data() {
     return {
-        username: "",
-        email: "",
-        password: "",
+      username: "",
+      email: "",
+      password: "",
     };
-},
-methods: {
+  },
+  methods: {
     ...mapActions(useCounterStore, ["registAction"]),
     async submitRegist() {
-    try {
+      try {
         await this.registAction({
-        username: this.username,
-        email: this.email,
-        password: this.password,
+          username: this.username,
+          email: this.email,
+          password: this.password,
         });
         this.$router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
+      } catch (error) {
+        console.log(error);
+      }
     },
-},
+  },
 };
 </script>
 

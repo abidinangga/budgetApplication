@@ -1,12 +1,12 @@
 <template>
-  <tr>
-    <td>{{ index + 1 }}</td>
-    <td>{{ data.CategoryTransaction.categoryTransaction }}</td>
-    <td>{{ data.description }}</td>
-    <td>{{ data.CategoryType.categoryType }}</td>
-    <td>Rp.{{rupiah(data.transactionAmount)}}</td>
-    <td>{{ data.date }}</td>
-    <td>
+  <tr class="table1-tr">
+    <td class="table1-td">{{ index + 1 }}</td>
+    <td class="table1-td">{{ data.CategoryTransaction.categoryTransaction }}</td>
+    <td class="table1-td">{{ data.description }}</td>
+    <td class="table1-td">{{ data.CategoryType.categoryType }}</td>
+    <td class="table1-td">Rp. {{rupiah(data.transactionAmount)}}</td>
+    <td class="table1-td">{{ data.date }}</td>
+    <td class="table1-td">
       <button @click.prevent="editData(data.id)">Edit</button>
       <button @click.prevent="deleteData(data.id)">Delete</button>
     </td>

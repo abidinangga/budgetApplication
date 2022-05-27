@@ -1,22 +1,27 @@
-.main {
-  background-color: bisque;
+.a {
+  font-family: sans-serif;
+  background: #d5f0f3;
+}
+
+.container .main-h {
+  text-align: center;
+  font-weight: 300px;
 }
 
 .main .main-header {
   font-family: monospace;
 }
 
-.main .main-header .main-h {
-  font-size: 30px;
+.main .main-header .main-box {
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px 20px;
 }
 
-.main .main-header .main-box {
-  width: 320px;
-  height: 300px;
-  top: 20%;
-  left: 40%;
-  position: absolute;
-  border-style: groove;
+.main .main-header .main-p {
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .main .main-header .main-label {
@@ -25,16 +30,43 @@
 
 .main .main-header .main-input {
   border-style: double;
-  width: 300px;
+  width: 100%;
 }
 
 .main .main-header .main-footer {
-  font-size: large;
-  padding-left: 25%;
+  font-size: 11pt;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
 }
 
 .main .main-header .main-button {
-  color: burlywood;
-  left: 40%;
+  background: #46de4b;
+  color: white;
+  font-size: 11pt;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+.table1 {
+  background: antiquewhite;
+  font-family: sans-serif;
+  color: #444;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #f2f5f7;
+}
+
+.table1 .table1-tr .table1-th {
+  background: cadetblue;
+  color: #fff;
+  font-weight: normal;
+}
+
+.table1 .table1-td .table1-th {
+  padding: 8px 20px;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

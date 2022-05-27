@@ -86,11 +86,7 @@ export const useCounterStore = defineStore({
             access_token: localStorage.getItem("access_token"),
           },
         });
-        const numb = data.data;
-        const format = numb.toString().split("").reverse().join("");
-        const convert = format.match(/\d{1,3}/g);
-        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
-        this.dataIncome = rupiah;
+        this.dataIncome = data.data;
       } catch (error) {
         console.log("error: ", error);
       }
@@ -102,11 +98,7 @@ export const useCounterStore = defineStore({
             access_token: localStorage.getItem("access_token"),
           },
         });
-        const numb = data.data;
-        const format = numb.toString().split("").reverse().join("");
-        const convert = format.match(/\d{1,3}/g);
-        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
-        this.dataExpense = rupiah;
+        this.dataExpense = data.data;
       } catch (error) {
         console.log("error: ", error);
       }
@@ -118,11 +110,7 @@ export const useCounterStore = defineStore({
             access_token: localStorage.getItem("access_token"),
           },
         });
-        const numb = data.data;
-        const format = numb.toString().split("").reverse().join("");
-        const convert = format.match(/\d{1,3}/g);
-        const rupiah = "Rp. " + convert.join(".").split("").reverse().join("");
-        this.dataTotal = rupiah;
+        this.dataTotal = data.data;
       } catch (error) {
         console.log("error: ", error);
       }
