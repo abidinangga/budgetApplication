@@ -3,7 +3,7 @@
 ## Installation
 Use the package manager npm to install
 
-```js
+```
 npm install
 ```
 ## Usage
