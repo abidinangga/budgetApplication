@@ -1,54 +1,56 @@
 <template>
   <div class="divHome">
     <h1 class="main-h">Budget Application</h1>
-      <div class="head">
-        <div class="header-home">
-          <div class="income">Income: Rp. {{ rupiah(dataIncome) }}</div>
-          <div class="expense">Expense: Rp. {{ rupiah(dataExpense) }}</div>
-          <div class="balence">Balence: Rp. {{ rupiah(dataTotal) }}</div>
-        </div>
-        <div class="header-right">
-          <button class="buttonAdd">
-            <router-link to="/add">Add</router-link>
-          </button>
-          <button @click.prevent="logout" class="logout">
-            Logout
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
+    <div class="head">
+      <div class="header-home">
+        <div class="income">Income: Rp. {{ rupiah(dataIncome) }}</div>
+        <div class="expense">Expense: Rp. {{ rupiah(dataExpense) }}</div>
+        <div class="balence">Balence: Rp. {{ rupiah(dataTotal) }}</div>
       </div>
-      <table class="table1">
-        <thead>
-          <tr class="table1-tr">
-            <th class="table1-th">No</th>
-            <th class="table1-th">Category Transaction</th>
-            <th class="table1-th">Description</th>
-            <th class="table1-th">Type Transaction</th>
-            <th class="table1-th">Amount</th>
-            <th class="table1-th">Date</th>
-            <th class="table1-th">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tableHome
-            v-for="(data, index) in dataAll"
-            :index="index"
-            :key="data.id"
-            :data="data"
-          ></tableHome>
-        </tbody>
-      </table>
+      <div class="header-right">
+        <button class="buttonAdd">
+          <router-link to="/add">Add</router-link>
+        </button>
+        <button @click.prevent="logout" class="logout">
+          Logout
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <table class="table1">
+      <thead class="table-head">
+        <tr class="table1-tr">
+          <th class="table1-th">No</th>
+          <th class="table1-th">Category Transaction</th>
+          <th class="table1-th">Description</th>
+          <th class="table1-th">Type Transaction</th>
+          <th class="table1-th">Amount</th>
+          <th class="table1-th">Date</th>
+          <th class="table1-th">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tableHome
+          v-for="(data, index) in dataAll"
+          :index="index"
+          :key="data.id"
+          :data="data"
+        ></tableHome>
+      </tbody>
+    </table>
   </div>
 </template>
 <script>
@@ -92,7 +94,7 @@ a {
   text-decoration: none;
   color: black;
 }
-.divHome{
+.divHome {
   display: flex;
   flex-direction: column;
   background: rgb(255, 248, 243);
@@ -127,10 +129,15 @@ a {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
+  font-family: 'Courgette', cursive;
 }
 .logout {
   display: flex;
   align-items: center;
+  font-family: 'Courgette', cursive;
+}
+.table-head {
+  padding: 8px 8px;
 }
 .icon {
   width: 30px;
@@ -146,6 +153,7 @@ a {
   -moz-box-shadow: 16px 5px 25px -5px rgba(102, 222, 147, 0.56);
   padding: 20px 20px;
   background-color: rgb(102, 222, 147);
+  font-family: 'Courgette', cursive;
 }
 .expense {
   font-size: 1rem;
@@ -157,6 +165,7 @@ a {
   -moz-box-shadow: 16px 5px 25px -5px rgba(255, 97, 109, 0.56);
   padding: 20px 20px;
   background-color: rgb(255, 97, 109);
+  font-family: 'Courgette', cursive;
 }
 .balence {
   font-size: 1rem;
@@ -168,5 +177,6 @@ a {
   -moz-box-shadow: 16px 5px 25px -5px rgba(255, 234, 201, 0.56);
   padding: 20px 20px;
   background-color: rgb(255, 234, 201);
+  font-family: 'Courgette', cursive;
 }
 </style>

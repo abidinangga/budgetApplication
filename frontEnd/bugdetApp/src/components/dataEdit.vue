@@ -1,38 +1,43 @@
 <template>
   <div>
     <div>
-      <label>Date</label>
-      <input type="date" v-model="dataById.date" />
+      <label class="divLabel">Date</label><br />
+      <input class="divInput" type="date" v-model="dataById.date" />
     </div>
     <div>
-      <label>Category Transaction</label>
-      <select v-model="dataById.categoryTransactionId" @change="category()">
+      <label class="divLabel">Category Transaction</label><br />
+      <select class="div-select" v-model="dataById.categoryTransactionId" @change="category()">
         <option value="1">Pemasukan</option>
         <option value="2">Pengeluaran</option>
       </select>
     </div>
     <div>
-      <label>Category Type</label>
-      <select v-model="dataById.categoryTypeId">
-        <option v-for="data in listCategory" :key="data.id" :value="data.id">
+      <label class="divLabel">Category Type</label><br />
+      <select class="div-select" v-model="dataById.categoryTypeId">
+        <option v-for="data in dataCategory" :key="data.id" :value="data.id">
           {{ data.categoryType }}
         </option>
       </select>
     </div>
     <div>
-      <label>Transaction Amount</label>
-      <input placeholder="100000" type="text" v-model="dataById.transactionAmount" />
+      <label class="divLabel">Transaction Amount</label><br />
+      <input
+        class="divInput"
+        placeholder="100000"
+        type="text"
+        v-model="dataById.transactionAmount"
+      />
     </div>
     <div>
-      <label>Description</label>
-      <textarea v-model="dataById.description"></textarea>
+      <label class="divLabel">Description</label><br />
+      <textarea class="divInput" v-model="dataById.description"></textarea>
     </div>
     <div>
-      <div class="inline-flex items-end">
-        <button @click.prevent="submitEdit">Edit</button>
+      <div>
+        <button class="button-submit" @click.prevent="submitEdit">Edit</button>
       </div>
       <div>
-        <router-link to="/home">Back</router-link>
+        <router-link class="back" to="/home">Back</router-link>
       </div>
     </div>
   </div>

@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <section>
-      <div>
-        <div>
-          <h1>Budget Application</h1>
-        </div>
-        <form @submit.prevent="submitRegist" id="login_form" method="POST">
-          <label>Name</label>
-          <input v-model="username" type="text" placeholder="rich brian" required />
-          <label class="text-sm font-medium">Email</label>
-          <input v-model="email" type="text" placeholder="example@gmail.com" required />
-          <label class="text-sm font-medium">Password</label>
-          <input v-model="password" type="password" placeholder="********" required />
+  <div class="container">
+    <h1 class="main-h">Budget Application</h1>
+    <section class="main">
+        <form @submit.prevent="submitRegist" method="POST" class="main-box">
+        <p class="main-p">Register</p>
+          <label class="main-label">Name:</label>
+          <input class="main-input" v-model="username" type="text" placeholder="rich brian" required />
+          <label class="main-label">Email:</label>
+          <input class="main-input" v-model="email" type="text" placeholder="example@gmail.com" required />
+          <label class="main-label">Password:</label>
+          <input class="main-input" v-model="password" type="password" placeholder="********" required />
           <button type="submit">
             <span>Create Account</span>
           </button>
@@ -19,8 +17,6 @@
             <router-link to="/">Back</router-link>
           </button>
         </form>
-        <div></div>
-      </div>
     </section>
   </div>
 </template>

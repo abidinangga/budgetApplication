@@ -47,6 +47,7 @@ export default {
   font-size: 13px;
   margin: 2px 2px;
   cursor: pointer;
+  font-family: 'Courgette', cursive;
 }
 .button-delete{
   background-color: #f44336;
@@ -59,6 +60,7 @@ export default {
   font-size: 13px;
   margin: 2px 2px;
   cursor: pointer;
+  font-family: 'Courgette', cursive;
 }
 .new{
   text-align: center;
