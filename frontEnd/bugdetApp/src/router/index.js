@@ -4,7 +4,7 @@ import register from '@/views/register.vue'
 import add from '@/views/addTransaction.vue'
 import edit from '@/views/editForm.vue'
 import home from '@/views/home.vue'
-
+import test from '@/views/test.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

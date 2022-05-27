@@ -1,50 +1,65 @@
-.a{
-	font-family: sans-serif;
-	background: #d5f0f3;
-}
-.container{
-  .main-h{
-    text-align: center;
-    font-weight: 300px
-  }
-}
-.main {
-  .main-header {
-    font-family: monospace;
-    .main-box {
-      width: 350px;
-      margin: 80px auto;
-      padding: 30px 20px;
-    }
-    .main-p{
-      text-align: center;
-      font-style: italic;
-      font-size: 20px;
-    }
-    .main-label {
-      font-size: large;
-    }
-    .main-input {
-      border-style: double;
-      width: 100%;
-    }
-    .main-footer {
-      font-size: 11pt;
-      width: 100%;
-      border: none;
-      border-radius: 3px;
-    }
-    .main-button {
-      background: #46de4b;
-      color: white;
-      font-size: 11pt;
-      width: 100%;
-      border: none;
-      border-radius: 3px;
-      padding: 10px 20px;
-    }
-  }
-}
+// $backColor: white;
+// .a{
+// 	font-family: sans-serif;
+// }
+
+// .container{
+//   flex:1;
+
+// }
+// .main{
+//   border-width:1px;
+//   width: 100%;
+//   height: 100%;
+//   justify-content: center;
+//   align-items: center;
+
+//   .main-header {
+//     width: 50%;
+//     height: 50%;
+//     font-family: monospace;
+//     align-items: center;
+//   }
+// }
+
+// .main {
+//   .main-header {
+//     font-family: monospace;
+//     justify-items: center;
+//     align-items: center;
+//     .main-box {
+//       width: 350px;
+
+//     }
+//     .main-p{
+//       text-align: center;
+//       font-style: italic;
+//       font-size: 20px;
+//     }
+//     .main-label {
+//       font-size: large;
+//     }
+//     .main-input {
+//       border-style: double;
+//       width: 100%;
+//     }
+//     .main-footer {
+//       font-size: 11pt;
+//       width: 100%;
+//       border: none;
+//       border-radius: 3px;
+//     }
+//     .main-button {
+//       background: #46de4b;
+//       color: white;
+//       font-size: 11pt;
+//       width: 100%;
+//       border: none;
+//       border-radius: 3px;
+//       padding: 10px 20px;
+//     }
+//   }
+// }
 
 .table1{
   background:antiquewhite;
@@ -57,10 +72,28 @@
       background:cadetblue;
     color: #fff;
     font-weight: normal;
+    border: 1px solid #999
+    }
+    .table1-td{
+      border: 1px solid #999;
+      padding: 8px 20px
     }
     .table1-td .table1-th{
       padding: 8px 20px;
     text-align: center;
     }
-
 }
+
+// .container{
+//   flex:1;
+//   height: 100%;
+//   .header{
+//     border: 1px solid #999;
+//     height: 40px;
+//   }
+//   .main{
+//     border: 1px solid black;
+//     height: 50px;
+//   }
+// }
+

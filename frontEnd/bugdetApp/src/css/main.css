@@ -1,55 +1,3 @@
-.a {
-  font-family: sans-serif;
-  background: #d5f0f3;
-}
-
-.container .main-h {
-  text-align: center;
-  font-weight: 300px;
-}
-
-.main .main-header {
-  font-family: monospace;
-}
-
-.main .main-header .main-box {
-  width: 350px;
-  margin: 80px auto;
-  padding: 30px 20px;
-}
-
-.main .main-header .main-p {
-  text-align: center;
-  font-style: italic;
-  font-size: 20px;
-}
-
-.main .main-header .main-label {
-  font-size: large;
-}
-
-.main .main-header .main-input {
-  border-style: double;
-  width: 100%;
-}
-
-.main .main-header .main-footer {
-  font-size: 11pt;
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-}
-
-.main .main-header .main-button {
-  background: #46de4b;
-  color: white;
-  font-size: 11pt;
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 20px;
-}
-
 .table1 {
   background: antiquewhite;
   font-family: sans-serif;
@@ -63,6 +11,12 @@
   background: cadetblue;
   color: #fff;
   font-weight: normal;
+  border: 1px solid #999;
+}
+
+.table1 .table1-td {
+  border: 1px solid #999;
+  padding: 8px 20px;
 }
 
 .table1 .table1-td .table1-th {
