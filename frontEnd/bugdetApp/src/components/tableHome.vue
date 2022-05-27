@@ -35,34 +35,4 @@ export default {
 };
 </script>
 
-<style>
-.button-edit{
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 2px;
-  cursor: pointer;
-  font-family: 'Courgette', cursive;
-}
-.button-delete{
-  background-color: #f44336;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 2px;
-  cursor: pointer;
-  font-family: 'Courgette', cursive;
-}
-.new{
-  text-align: center;
-}
-</style>
+<style></style>

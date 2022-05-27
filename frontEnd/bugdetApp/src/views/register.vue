@@ -10,10 +10,10 @@
           <input class="main-input" v-model="email" type="text" placeholder="example@gmail.com" required />
           <label class="main-label">Password:</label>
           <input class="main-input" v-model="password" type="password" placeholder="********" required />
-          <button type="submit">
+          <button class="main-button" type="submit">
             <span>Create Account</span>
           </button>
-          <button class="buttonBack">
+          <button class="main-button">
             <router-link to="/">Back</router-link>
           </button>
         </form>
