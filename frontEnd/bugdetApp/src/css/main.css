@@ -20,6 +20,11 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .table1 {
   background: antiquewhite;
   font-family: "Courgette", cursive;
@@ -46,5 +51,505 @@
 .table1 .table1-td .table1-th {
   padding: 8px 20px;
   text-align: center;
+}
+
+.table1 .button-edit {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 2px 2px;
+  cursor: pointer;
+  font-family: "Courgette", cursive;
+}
+
+.table1 .button-delete {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 2px 2px;
+  cursor: pointer;
+  font-family: "Courgette", cursive;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../assets/pict2.jpg);
+  background-size: cover;
+}
+
+.container .main-h {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+
+.container .main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Courgette", cursive;
+}
+
+.container .main-box {
+  width: 30%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e9e4e0;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.container .main-p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #020202;
+  text-align: center;
+}
+
+.container .main-label {
+  font-size: 1rem;
+  color: black;
+}
+
+.container .main-input {
+  width: 70%;
+  height: 5%;
+  border: 1px solid white;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 10px;
+}
+
+.container .main-button {
+  margin-top: 1px;
+  padding: 5px 10px;
+  font-family: "Courgette", cursive;
+}
+
+.container .main-footer {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Courgette", cursive;
+}
+
+.container .footer-p {
+  font-size: 1rem;
+  color: black;
+}
+
+.divHome {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url(../assets/pict1.jpg);
+}
+
+.divHome .main-h {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+
+.divHome .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divHome .header-home {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  margin-bottom: 20px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.divHome .header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 0.5rem;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
+.divHome .buttonAdd {
+  background-color: #9bb3b9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "Courgette", cursive;
+}
+
+.divHome .logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Courgette", cursive;
+}
+
+.divHome .table-head {
+  padding: 8px 8px;
+}
+
+.divHome .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.divHome .income {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  box-shadow: 16px 5px 25px -5px rgba(102, 222, 147, 0.56);
+  -webkit-box-shadow: 16px 5px 25px -5px rgba(102, 222, 147, 0.56);
+  -moz-box-shadow: 16px 5px 25px -5px rgba(102, 222, 147, 0.56);
+  padding: 20px 20px;
+  background-color: #66de93;
+  font-family: "Courgette", cursive;
+}
+
+.divHome .expense {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  box-shadow: 16px 5px 25px -5px rgba(255, 97, 109, 0.56);
+  -webkit-box-shadow: 16px 5px 25px -5px rgba(255, 97, 109, 0.56);
+  -moz-box-shadow: 16px 5px 25px -5px rgba(255, 97, 109, 0.56);
+  padding: 20px 20px;
+  background-color: #ff616d;
+  font-family: "Courgette", cursive;
+}
+
+.divHome .balence {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  box-shadow: 16px 5px 25px -5px rgba(255, 234, 201, 0.56);
+  -webkit-box-shadow: 16px 5px 25px -5px rgba(255, 234, 201, 0.56);
+  -moz-box-shadow: 16px 5px 25px -5px rgba(255, 234, 201, 0.56);
+  padding: 20px 20px;
+  background-color: #ffeac9;
+  font-family: "Courgette", cursive;
+}
+
+.divForm {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  opacity: 0.8;
+  background: url(../assets/pict5.jpg);
+  background-size: cover;
+}
+
+.divForm .main-h {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+
+.divForm .divForm-main {
+  width: 30%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #b7cadb;
+  border-radius: 10px;
+  opacity: 0.8;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.divForm .divInput {
+  margin: 2px;
+  padding: 1px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
+}
+
+.divForm .div-select {
+  margin: 2px;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
+}
+
+.divForm .button-submit {
+  background: #34f03a;
+  color: #020000;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px;
+  margin: 1px 5px;
+  border: solid 1px gray;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  font-family: "Courgette", cursive;
+}
+
+.divForm .divLabel {
+  margin: 2px;
+  padding: 1px;
+  width: 50%;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+.divForm .back {
+  margin: 5px 5px;
+  padding: 4px;
+  width: 50%;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background: red;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
+}
+
+.divForm1 {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../assets/pict5.jpg);
+  background-size: cover;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.divForm1 .main-h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-family: "Lobster", cursive;
+}
+
+.divForm1 .divForm-main1 {
+  width: 30%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b7cadb;
+  border-radius: 10px;
+  opacity: 0.8;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.divForm1 .divInput1 {
+  margin: 2px;
+  padding: 1px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
+}
+
+.divForm1 .div-select1 {
+  margin: 2px;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
+}
+
+.divForm1 .button-submit {
+  background: #34f03a;
+  color: #020000;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px;
+  margin: 1px 5px;
+  border: solid 1px gray;
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  font-family: "Courgette", cursive;
+}
+
+.divForm1 .divLabel1 {
+  margin: 2px;
+  padding: 1px;
+  width: 50%;
+  height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+.divForm1 .back {
+  margin: 5px 5px;
+  padding: 4px;
+  width: 20%;
+  height: 20%;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background: red;
+  border-radius: 5px;
+  border: solid 1px gray;
+  font-family: "Courgette", cursive;
 }
 /*# sourceMappingURL=main.css.map */

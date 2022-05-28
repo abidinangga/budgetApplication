@@ -50,91 +50,24 @@ export default {
         });
         localStorage.setItem("access_token", data.data.access_token);
         this.$router.push("/home");
+        this.$swal({
+          title: `Success Login ${this.email}`,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
       } catch (error) {
-        console.log(error);
+        this.$swal({
+          icon: "error",
+          title: "username or password wrong! ",
+        });
       }
     },
   },
 };
 </script>
 
-<style>
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url(../assets/pict2.jpg);
-  background-size: cover;
-}
-.main-h {
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-family:'Lobster', cursive;
-}
-.main{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Courgette', cursive;
-}
-.main-box{
-  width: 30%;
-  height: 60%;
-  display: flex;
-  padding: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(233, 228, 224);
-  border-radius: 10px;
-  opacity: 0.8;
-}
-.main-p{
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: rgb(2, 2, 2);
-  text-align: center;
-}
-.main-label{
-  font-size: 1rem;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-
-}
-.main-input{
-  width:70%;
-  height: 5%;
-  border: 1px solid rgb(255, 255, 255);
-  padding: 1%;
-  margin: 1%;
-  border-radius: 10px;
-
-}
-.main-button{
-  margin-top: 1px;
-  padding: 5px 10px;
-  font-family: 'Courgette', cursive;
-}
-.main-footer{
-  width: 100%;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Courgette', cursive;
-}
-.footer-p{
-  font-size: 1rem;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-}
-</style>
+<style></style>
