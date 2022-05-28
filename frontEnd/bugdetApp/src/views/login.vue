@@ -50,8 +50,20 @@ export default {
         });
         localStorage.setItem("access_token", data.data.access_token);
         this.$router.push("/home");
+        this.$swal({
+          title: `Success Login ${this.email}`,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
       } catch (error) {
-        console.log(error);
+        this.$swal({
+          icon: "error",
+          title: "username or password wrong! ",
+        });
       }
     },
   },
